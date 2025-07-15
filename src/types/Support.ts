@@ -5,7 +5,7 @@ export interface SupportTicket {
   category: 'Técnico' | 'Cuenta' | 'Transacciones' | 'General'
   status: 'Abierto' | 'En Proceso' | 'Resuelto' | 'Cerrado'
   priority: 'Baja' | 'Media' | 'Alta' | 'Crítica'
-  createdAt: string
+  createdAt?: string
   updatedAt: string
   userId: number
 }

@@ -30,7 +30,7 @@ const mockNews: NewsItem[] = [
   {
     id: 3,
     title: "Nueva funcionalidad de transferencias instantáneas",
-    summary: "Atlas Financial Bank lanza transferencias 24/7 con confirmación inmediata.",
+    summary: "Vault Financial Bank lanza transferencias 24/7 con confirmación inmediata.",
     category: "Tecnología",
     date: "2024-01-13",
     url: "#"

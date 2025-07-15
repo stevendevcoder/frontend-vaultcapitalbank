@@ -43,7 +43,7 @@ export default function Dashboard() {
             <div>
               <p className="text-[#22D3EE] text-sm font-medium">Saldo Actual</p>
               <p className="text-2xl font-bold text-white">
-                ${(user.balance || 0).toLocaleString()}
+                ${(user?.balance || 0).toLocaleString()}
               </p>
             </div>
             <div className="w-12 h-12 bg-[#22D3EE]/20 rounded-full flex items-center justify-center">
