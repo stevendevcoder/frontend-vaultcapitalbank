@@ -2,12 +2,17 @@ import { Outlet, Navigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContextTypes'
 import Navbar from './Navbar'
 
-export default function ProtectedLayout() {
+export default function AdminProtectedLayout() {
   const { user } = useAuth()
 
   // Si no hay usuario autenticado, redirigir al login
   if (!user) {
     return <Navigate to="/login" replace />
+  }
+
+  // Si el usuario no es admin, redirigir al dashboard
+  if (user.role !== 'ADMIN') {
+    return <Navigate to="/dashboard" replace />
   }
 
   return (
@@ -18,4 +23,4 @@ export default function ProtectedLayout() {
       </main>
     </div>
   )
-}
+} 

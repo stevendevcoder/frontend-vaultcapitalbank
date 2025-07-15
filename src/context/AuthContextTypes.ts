@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext, useContext } from 'react'
 import type { Transaction } from '../types/Transaction'
 
 export interface User {
@@ -25,4 +25,13 @@ export interface AuthContextType {
   isLoading: boolean
 }
 
-export const AuthContext = createContext<AuthContextType | null>(null) 
+export const AuthContext = createContext<AuthContextType | null>(null)
+
+// Hook personalizado para usar el contexto de autenticación
+export const useAuth = () => {
+  const context = useContext(AuthContext)
+  if (!context) {
+    throw new Error('useAuth debe ser usado dentro de un AuthProvider')
+  }
+  return context
+} 
